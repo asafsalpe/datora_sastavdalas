@@ -32,5 +32,30 @@ def pasutijums():
     ttk.Label(logs1, text="Izvēlies instrumentu:").grid(column = 0, row = 1, padx=20, pady=25)
     ttk.Label(logs1, text="Norādi cenu:").grid(column = 0, row = 2, padx=20, pady=25)
     ttk.Label(logs1, text="Nomas dienas:").grid(column = 0, row = 3, padx=20, pady=25)
+    #mainīgie
+    vardsuzvards = tk.StringVar()
+    instruments = tk.StringVar()
+    cena = tk.StringVar()
+    dienas = tk.StringVar()
+    #izvēles izveide
+    darbinieki = ttk.Combobox(logs1, textvariable=vardsuzvards)
+    instrumenti = ttk.Combobox(logs1, textvariable=instruments)
+    nomascena = ttk.Combobox(logs1, textvariable=cena)
+    nomasdienas = ttk.Entry(logs1, textvariable=dienas)
+    darbinieki['values'] = ("Kārlis Bērziņš", "Pēteris Zāle", "Jānis Čakste", "Sanija Priede")
+    instrumenti['values'] = ('frēze', 'slīpmašina', 'urbis')
+    nomascena['values'] = ('15', '55', '10')
+
+    darbinieki.grid(column=1, row=0)
+    instrumenti.grid(column=1, row=1)
+    nomascena.grid(column=1, row=2)
+    nomasdienas.grid(column=1, row=3)
+
+
+
+
+
+
+
 logs.mainloop()
 
