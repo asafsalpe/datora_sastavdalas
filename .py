@@ -51,9 +51,28 @@ def pasutijums():
     nomascena.grid(column=1, row=2)
     nomasdienas.grid(column=1, row=3)
 
+    def rezultats():
+        selected_item3 = nomascena.get()
+        value = int(nomasdienas.get())
+        values = {"15":15, "55":55, "10":10}
+        cena = values[selected_item3]
+        result = value*cena
+        result_label.config(text=f'Result: {result} eiro')
 
+    btn2 = tk.Button(logs1, text="Aprēķināt nomas cenu", command = rezultats)
+    btn2.grid(row=10, column=0)
 
+    result_label = tk.Label(logs1)
+    result_label.grid(row=10, column=1)
 
+    def save_to_file():
+        selected_item1 = darbinieki.get()
+        selected_item2 = instrumenti.get()
+        selected_item3 = nomascena.get()
+        selected_item4 = nomasdienas.get()
+
+    btn3 = tk.Button(logs1, text="Aizvērt!", command = logs1.destroy)
+    btn3.grid(row=10, column=2)
 
 
 
